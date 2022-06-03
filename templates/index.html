@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <title>Counter</title>
+</head>
+<body>
+    <div class="content">
+        <h1>COUNTER</h1>
+        {% if count == 1: %}
+        <h2>You Visited {{count}} Time! </h2>
+        {% else: %}
+        <h2>You Visited {{count}} Times!</h2>
+        {% endif %}
+        <div class="btns flex">
+            <form action="/add2" method="POST">
+                <input class="btn1" type="submit" name="add2visits" value="Add 2 visits!">
+            </form>
+            <form action="/destroysession" method="POST">
+                <input class="btn2" type="submit" name="reset" value="Reset">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
